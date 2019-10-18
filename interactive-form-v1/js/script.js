@@ -1,4 +1,5 @@
 
+/* focus on name field when page loads up */
 $('#name').focus();
 
 
@@ -13,10 +14,10 @@ $('#title').change(function () {
     }
 });
 
- /* variable themeSele is assigned new html element option to 
- beginning of select options
+/* variable themeSele is assigned new html element option to 
+beginning of select options
 
- */
+*/
 const themeSele = '<option selected="selected" id="themeSele">Please select a T-shirt theme</option>';
 
 if ($('#design option:selected').text() == 'Select Theme') {
@@ -302,12 +303,12 @@ function validateCreditCard() {
 
     }
 
-    // Action when select option credit card is not selected
+    // this runs when credit card is not selected
     if ($('#payment').val() == 'paypal' || $('#payment').val() == 'bitcoin') {
         return true;
     }
 
-    // If any of our validtions are not true return false stop.
+
     if ($('#payment').val() == 'credit card') {
         if (!ccardnumber.test($('input#cc-num').val()) && !zipcode.test($('input#zip').val()) && !cvv.test($('input#cvv').val())) {
             $('#credit-card div label').css('color', 'red');
@@ -337,7 +338,7 @@ function validateCreditCard() {
 
 function validateUserFields() {
 
-    /** Load all function in a single funtion to test if true **/
+
     console.log(validateNameField());
     console.log(validateEmailField());
     console.log(validateActivity());

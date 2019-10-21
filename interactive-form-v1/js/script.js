@@ -83,13 +83,13 @@ $('.activities').change(function (event) {
 
     $('.activities div').text('Total: $' + totalActivityCost);
 
-    // Disable conflicting activities	
+    // disable conflicting activities	
     const activityChecked = clicked.attr('data-day-and-time');
 
     $('.activities input').each(function (i, input) {
         const checkboxes = $(input).attr('data-day-and-time');
-        const clickedActivity = clicked.parent().text(); // the current clicked activity 
-        const inputActivity = $(input).parent().text(); // is this equal to the activty in the loop 
+        const clickedActivity = clicked.parent().text();
+        const inputActivity = $(input).parent().text();
 
         if (activityChecked === checkboxes && clickedActivity !== inputActivity) {
             if (clicked.is(':checked')) {
